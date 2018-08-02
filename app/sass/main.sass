@@ -1,0 +1,424 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	background-image: url(../img/bg.jpg)
+	background-attachment: fixed
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+b, strong
+	font-weight: bold
+
+
+//up-button
+#go-top
+	color: $light-text
+	position: fixed
+	bottom: 55px
+	right: 40px
+	cursor: pointer
+	display: none
+	width: 80px
+	height: 80px
+	padding: 5px
+	background: $accent
+	line-height: 80px
+	text-align: center
+	border-radius: 50%
+	font: $default-font, sans-serif
+
+ 
+#go-top:hover
+	background: #333
+	opacity: 0.6
+	
+//header
+.top-line
+	background-color: $dark
+	//background-image: url(../img/bg.jpg)
+	position: relative
+	height: 145px
+
+.logo
+	font-family: baron-g, sans-serif
+	color: #ffffff
+	font-size: 23px
+	display: inline-block
+	text-decoration: none
+	position: absolute
+	padding-left: $gutter
+	left: 0
+	line-height: 145px
+	&:hover, &:focus
+		text-decoration: none
+		color: #ffffff
+	span
+		color: $accent
+
+.main-menu
+	padding: 0 100px
+	width: 100%
+	text-align: center
+	line-height: 145px
+	display: flex
+	justify-content: center
+	ul, li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+		margin-right: -4px
+		width: 120px
+		&.active
+			a
+				color: #ffffff
+				background-color: lighten($dark, 5%)
+		&:hover
+			a
+				color: #ffffff
+				background-color: lighten($dark, 8%)
+		img
+			margin: auto
+			width: 40px
+			height: 40px
+			transition: all ease-out 0.25s
+		a
+			display: flex
+			flex-direction: column
+			span
+				padding-top: 5px
+				line-height: 1
+				text-transform: lowercase
+				font-style: 
+				font-size: 0.7em
+				word-wrap: break-word
+
+	a
+		color: #d1d9e0
+		text-decoration: none
+		text-transform: uppercase
+		font-size: 16px
+		font-weight: bold
+		padding: 0 15px
+		line-height: 65px
+		display: block
+		transition: color .25s ease, background-color .25s ease
+
+.contact-wrap
+	font-family: baron-g, sans-serif
+	color: #ffffff
+	font-size: 23px
+	display: inline-block
+	position: absolute
+	padding: 
+		right: $gutter
+		left: 10px
+	right: 0
+	color: $light-text
+	line-height: 145px
+	text-align: center
+
+.mobile-menu-button
+	color: #ffffff
+	text-align: center
+	cursor: pointer
+	line-height: 65px
+	font-size: 17px
+	text-transform: uppercase
+	font-weight: bold
+	white-space: nowrap
+	display: none
+	&:hover
+		color: $accent
+
+.mobile-menu
+	display: none
+	background-color: lighten($dark, 3%)
+	border-top: lighten($dark, 5%) 1px solid
+	.top-menu
+		display: block
+	li
+		display: block
+		a
+			padding: 0
+			line-height: 45px	
+
+.title-head
+	width: 400px
+	margin: auto
+	text-align: center
+	margin: 
+		top: 40px
+		bottom: 40px
+	span
+		color: $light-text
+		padding: 10px 40px 10px 40px
+h1
+	color: $light-text
+//setion 1
+.first-section
+	//position: relative
+	//background-color: rgba(34,193,43,0.6)
+	//background-image: url(../img/bg.jpg)
+	min-height: 150px
+	//opacity: 0.7
+.title-support
+	position: relative
+	min-height: 100px
+	margin: 
+		top: 10px
+		bottom: 20px	
+	.h2-pattern
+		position: absolute
+		left: 0
+		top: 0
+		background-color: $fon-one
+		opacity: 0.7
+		width: 100%
+		height: 100%
+	.h2-text
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		h2
+			color: $accent
+			text-align: center
+			line-height: 100px		
+
+.first-block
+	//background-color: rgba(34,193,43,0.6)
+.container-fluid
+	h2
+		color: $accent
+		text-align: center
+		
+		text-decoration: uppercase
+.first-block, .two-block
+	width: 1040px
+	padding:
+		top: $gutter 
+		bottom: $gutter
+.block-label
+	margin-top: 25px
+	&-window
+		img
+			max-width: 100%
+.item-title
+	min-height: 340px
+	&-content
+		position: absolute
+		padding: 40px
+		z-index: 1
+		bottom: 0
+		color: $light-text	
+		h3
+			margin: 0
+			text-transform: uppercase	
+			font-weight: 800
+			line-height: 1.25	
+.pattern
+	display: block	
+	position: relative
+	background-color: $dark
+	&::before
+		content: ''
+		transition: opacity .25s ease, left .25s ease, bottom .25s ease, right .25s ease, top .25s ease
+		z-index: 1
+		position: absolute
+		border: 1px solid $light-text
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		opacity: 0
+	&:hover
+		&::before
+			opacity: 0.2
+			top: 10px
+			right: 10px
+			bottom: 10px
+			left: 10px
+		.overlay
+			&::berfore
+				opacity: 0.75
+.overlay
+	background-size: cover
+	background-position: center
+	position: relative
+	display: block
+	&::before
+		content: ''
+		position: absolute
+		background-color: $dark
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0.45
+		transition: opacity .25 ease
+	&:hover
+		&::before
+			opacity: 0.75
+
+.item-download			
+	display: inline-block
+	a, i
+		margin-right: 15px
+
+.two-section
+	//background-color: $fon-one
+	//background-image: url(../img/bg19.jpg)
+	min-height: 400px
+	//width: 1040px
+	margin: auto
+
+
+.three-sectio
+	position: relative
+	height: 350px
+
+.block-image, .block-text
+	position: absolute
+	right: 0
+	left: 0
+	height: 100%
+	width: 100%
+	color: white
+
+.block-image
+	background-color: green
+	//background-image: url(../img/bg.jpg)
+	opacity: 0.8
+
+
+
+//footer
+.button
+	display: inline-block
+	border: none
+	color: #ffffff
+	text-decoration: none
+	background-color: $accent
+	padding: 12px 40px
+	font-size: 14px
+	text-transform: uppercase
+	font-weight: 600
+	border-radius: 10em
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	transition: background-color .1s ease
+	&:hover, &:focus
+		text-decoration: none
+		color: #ffffff
+	&:hover
+		background-color: lighten($accent, 5%)
+	&:active
+		background-color: darken($accent, 5%)
+
+.s_more
+	padding: $gutter*2 0
+	background-color: #f5f5f5
+
+.main-footer
+	background-color: $dark-blue
+	padding: 25px 0
+	border-bottom: 1px solid rgba(#fff, .1)
+
+.bottom-footer
+	background-color: $dark-blue
+	padding: 25px 0 35px
+	.logo
+		display: inline-block
+	p
+		color: rgba(#fff, .2)
+		font-size: 12px
+		margin: 5px
+	.footer-copy
+		color: rgba(#fff, .45)
+		font-size: 13px
+		font-family: baron-g, sans-serif
+
+.footer-menu
+	li
+		&.active
+			text-decoration: underline
+			background: none
+			a
+				background: none
+		a
+			font-size: 15px
+			padding: 0 10px
+			&:hover
+				text-decoration: underline
+				background: none
+
+nav.soc
+	padding: 15px 0 20px
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+		text-align: center
+	li
+		display: inline-block
+		a
+			display: block
+			text-align: center
+			border: 1px solid rgba(#fff, .1)
+			border-radius: 10em
+			width: 52px
+			height: 52px
+			line-height: 50px
+			color: #ffffff
+			font-size: 24px
+			margin: 4px
+			transition: border-color .25s ease, opacity .25s ease
+			.fa
+				transition: opacity .25s ease
+				opacity: 0.75
+			&:hover
+				border-color: rgba(#fff, .35)
+				.fa
+					opacity: 1
+
+.logo-footer
+	span
+		color: $accent
+
+
+@import "media" // Always at the end
